@@ -136,7 +136,6 @@ def run(username: str, password: str):
         return True
 
 def yqtb(students: list):
-
     logger.info('开始执行填报...')
     all_num = len(students)
     cur_num = 0
@@ -155,18 +154,14 @@ def yqtb(students: list):
         raise Exception("填报过程出现异常")
 
 if __name__ == "__main__":
-
-    env_dist = os.environ
-    print(env_dist.get("config"))
-    print(type(env_dist.get("config")))
-    print(type(eval(env_dist.get("config"))))
-    config = eval(env_dist.get("config"))
-    print(type(config))
-    # with open("config.txt", encoding="utf-8") as f:
-    #     config = eval(f.read())
     logging.basicConfig(level=logging.INFO,
                         format='%(asctime)s - %(levelname)s - %(message)s')
     logger = logging.getLogger(__name__)
+    env_dist = os.environ
+    config = eval(env_dist.get("config"))
+    # with open("config.txt", encoding="utf-8") as f:
+    #     config = eval(f.read())
+
 
     url = r'https://yqtb.nwpu.edu.cn/wx/ry/jrsb.jsp'
     driver_path = ChromeDriverManager().install()
