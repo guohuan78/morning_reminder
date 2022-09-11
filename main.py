@@ -157,7 +157,7 @@ def yqtb(students: list):
 if __name__ == "__main__":
 
     env_dist = os.environ
-    config = eval(env_dist.get("config"))
+    config = json.loads(env_dist.get("config"))
     # with open("config.txt", encoding="utf-8") as f:
     #     config = eval(f.read())
     logging.basicConfig(level=logging.INFO,
