@@ -39,26 +39,26 @@ def get_access_token():
 def get_holiday(date):
     conn = http.client.HTTPSConnection('api.tianapi.com')  #接口域名
     headers = {'Content-type':'application/x-www-form-urlencoded'}
-    params = urllib.parse.urlencode({'key':'e6f96b565c8e0265b4b9d3042c965558','date':date})
+    params = urllib.parse.urlencode({'key':config['key'],'date':date})
     conn.request('POST','/jiejiari/index',params,headers)
     return json.loads(conn.getresponse().read().decode('utf-8'))["newslist"][0]
 
 def get_response(func):
     dic = {
         'saylove': {
-            'args':{'key':'e6f96b565c8e0265b4b9d3042c965558'},
+            'args':{'key':config['key']},
             'url':'/saylove/index'
         },
         'one': {
-            'args':{'key':'e6f96b565c8e0265b4b9d3042c965558','rand':'1'},
+            'args':{'key':config['key'],'rand':'1'},
             'url':'/one/index'
         },
         'copywriting': {
-            'args':{'key':'e6f96b565c8e0265b4b9d3042c965558'},
+            'args':{'key':config['key']},
             'url':'/pyqwenan/index'
         },
         'rainbow_fart': {
-            'args':{'key':'e6f96b565c8e0265b4b9d3042c965558'},
+            'args':{'key':config['key']},
             'url':'/caihongpi/index'
         }
     }
