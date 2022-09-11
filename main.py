@@ -157,7 +157,7 @@ def yqtb(students: list):
 if __name__ == "__main__":
 
     env_dist = os.environ
-    config = env_dist.get("config")
+    config = eval(env_dist.get("config"))
     # with open("config.txt", encoding="utf-8") as f:
     #     config = eval(f.read())
     logging.basicConfig(level=logging.INFO,
@@ -173,7 +173,7 @@ if __name__ == "__main__":
     # 获取accessToken
     accessToken = get_access_token()
     # 接收的用户
-    users = env_dist.get("user")
+    users = eval(env_dist.get("user"))
     # users = config['user']
 
     # 构建推送数据 不包含推送对象
