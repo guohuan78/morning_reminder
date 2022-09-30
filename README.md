@@ -1,3 +1,7 @@
+# warning
+
+因西工大疫情填报功能失效，此仓库被废弃，如果想到别的功能可能加进去重新开启。
+
 # morning_reminder
 天行数据api + 微信公众测试平台 + github action
 
